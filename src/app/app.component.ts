@@ -11,6 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   subjectData: any;
+  testimonialsData: any;
 
   constructor(private http: HttpClient) {}
 
@@ -18,6 +19,11 @@ export class AppComponent implements OnInit {
     this.http.get('/assets/data/subjects.json').subscribe((data) => {
       this.subjectData = data;
       console.log(this.subjectData)
+    });
+
+    this.http.get('/assets/data/testimonials.json').subscribe((data) => {
+      this.testimonialsData = data;
+      console.log(this.testimonialsData)
     });
 
     
