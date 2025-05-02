@@ -51,7 +51,29 @@
       </div>
 
     </div>
+  
+   <div class="subjects" *ngIf="subjectData">
+    <div class="subject" *ngFor="let subject of subjectData">
+      <a class="subject-link" [routerLink]="['/subject', subject.subject]">
+        <h3>{{ subject.title }}</h3>
+        <p>{{ subject.subHeading }}</p>
+      </a>
+    </div>
+    </div>  
+  <!-- <div class="subjects" *ngIf="subjectData">
+      <div class="subject" *ngFor="let subject of subjectData" (click)="goToSubject(subject)">
+        <div *ngFor="let property of subject | keyvalue">
+          <strong>{{ property.key }}:</strong> {{ property.value }}
+        </div>
+       <h3> {{subject.title}} </h3>
+       <p>{{subject.subHeading}} </p>
+       <hr />
+      </div>
+    </div> -->
+
+    <router-outlet></router-outlet>
+
   </div>
 </main>
 
-<router-outlet></router-outlet>
+

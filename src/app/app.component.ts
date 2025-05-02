@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router'; 
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HttpClientModule],
+  imports: [RouterOutlet, HttpClientModule, CommonModule, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+
 export class AppComponent implements OnInit {
   subjectData: any;
   testimonialsData: any;
@@ -28,7 +33,6 @@ export class AppComponent implements OnInit {
 
     
   }
-
 
 
 
