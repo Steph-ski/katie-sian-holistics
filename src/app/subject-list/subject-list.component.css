@@ -1,0 +1,39 @@
+.subjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .subject-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .subject {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+  }
+  
+  .subject:hover {
+    transform: translateY(-4px);
+  }
+  
+  .subject h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+  
+  .subject p {
+    margin: 6px 0;
+  }

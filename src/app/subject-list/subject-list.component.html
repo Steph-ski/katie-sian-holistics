@@ -1,0 +1,6 @@
+<h2>Subjects</h2>
+<ul>
+  <li *ngFor="let subject of subjects">
+    <a [routerLink]="['/subject', subject.id]" [state]="{ subject: subject }">{{ subject.title }}</a>
+  </li>
+</ul>
