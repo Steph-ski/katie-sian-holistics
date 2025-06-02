@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common'; // Add this
 import { RouterModule } from '@angular/router'; // If you're using routing
 
-@Component({
+@Component({  
   selector: 'app-subject-detail',
   standalone: true,
   imports: [RouterModule, CommonModule],

@@ -1,10 +1,12 @@
-<p>subject-detail works!</p>
 
-<div *ngIf="subject">
-    <h2>{{ subject.title }}</h2>
-    <h4>{{ subject.subHeading }}</h4>
-    <p>{{ subject.subjectInfo }}</p>
-    <p><em>Booking info: {{ subject.tidyCallLink }}</em></p>
+  <div class="subject-detail-container">
+  <div class="subject-detail-content" *ngIf="subject">
+    <h2>{{ subject.subHeading }}</h2>
+    <h4>{{ subject.title }}</h4>
+    <p>{{ subject.description }}</p>   
+    <img [src]="subject.image" alt="{{ subject.title }}" class="subject-image" />
+     <a href="{{subject.tidyCallLink}}" target="_blank" class="booking-button">
+        Book an Appointment
+        </a>
   </div>
-
-  
+</div>
