@@ -38,6 +38,14 @@
         Book an Appointment
         </a>
       </div>
+
       <app-subject-list></app-subject-list>
+       <div class="reviews-section" *ngIf="reviews.length > 0">
+        <div class="review-card">
+          <p class="review-text">"{{ reviews[currentReviewIndex].text }}"</p>
+          <p class="review-name">{{ reviews[currentReviewIndex].name }}</p>
+          <p class="review-location">{{ reviews[currentReviewIndex].location }}</p>
+        </div>
+      </div>
 
     </div>

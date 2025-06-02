@@ -9,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  ngAfterViewInit(): void {
+    const burger = document.getElementById('burgerMenu');
+    const navMenu = document.getElementById('navMenu');
+
+    if (burger && navMenu) {
+      burger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  }
+
 }

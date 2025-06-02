@@ -1,6 +1,7 @@
 .header {
     width: 100%;
-    height: 10%; 
+    height: auto; 
+    min-height: 80px;
     background-color: #83C5BE;
     display: flex;
     justify-content: space-between;
@@ -8,6 +9,8 @@
     position: sticky;
     top: 0;
     overflow: hidden;
+    z-index: 1000; 
+    padding: 10px 20px; 
   }
   
   .katie_sian_logo {
@@ -22,9 +25,48 @@
     display: flex;
     justify-content: space-around;
     padding-right: 20px;
+    z-index: 999;
   }
   
   .header-button {
     all: unset;
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
+
+  .burger-menu {
+  display: none;
+  font-size: 2.5rem;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header-buttons {
+    display: none;
+    flex-direction: column;
+    background-color: #83C5BE;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 10px 20px;
+  }
+
+  .header-buttons.active {
+    display: flex;
+  }
+
+   .header-button {
+    all: unset; /* if used, make sure to re-apply needed styles */
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: black;  /* 👈 Ensure text is visible */
+    text-align: right;
+    cursor: pointer;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+}
