@@ -20,7 +20,7 @@
   }
   
   .header-buttons {
-    outline: 2px solid red;
+   /* outline: 2px solid red;*/
     width: 50%;
     display: flex;
     justify-content: space-around;
@@ -47,26 +47,33 @@
     background-color: #83C5BE;
     position: absolute;
     top: 100%;
+    width: 120px; 
     right: 0;
-    width: 100%;
     text-align: right;
     padding: 10px 20px;
+     z-index: 1100;
+     margin-right: 55px;
   }
+
+  .header {
+  overflow: visible; 
+}
 
   .header-buttons.active {
     display: flex;
   }
 
    .header-button {
-    all: unset; /* if used, make sure to re-apply needed styles */
+    all: unset; 
     padding: 1rem;
     font-size: 1.5rem;
-    color: black;  /* 👈 Ensure text is visible */
+    color: black; 
     text-align: right;
     cursor: pointer;
   }
 
   .burger-menu {
     display: block;
+    margin-right: 70px;
   }
 }
