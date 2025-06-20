@@ -6,6 +6,7 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden; 
+    scroll-padding-top: 130px;
   }
 
 .main {
@@ -18,6 +19,7 @@ html, body {
   flex: 1; /* fills available space */
   display: flex;
   flex-direction: column;
+  padding-top: 60px;
 }
 
   body {

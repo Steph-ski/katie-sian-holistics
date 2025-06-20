@@ -1,3 +1,5 @@
+<div id="top"></div>
+
 <div class="content">
     <div class="opening">
       <div class="opening-text">
@@ -14,7 +16,7 @@
       </div>
     </div>
 
-    <div class="intro">
+    <div class="intro"id="about">
       <div class="intro-text">
        <div> Hi, I’m Katie!</div>
        <div>I am a qualified Solution Focused Therapist and Clinical Hypnotherapist (Bsc Hons,
@@ -39,7 +41,9 @@
         </a>
       </div>
 
+      <div id="services">
       <app-subject-list></app-subject-list>
+      </div>
        <div class="reviews-section" *ngIf="reviews.length > 0">
         <div class="review-card">
           <p class="review-text">"{{ reviews[currentReviewIndex].text }}"</p>

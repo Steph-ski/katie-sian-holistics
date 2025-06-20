@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  constructor(private router: Router) {}
 
   ngAfterViewInit(): void {
     const burger = document.getElementById('burgerMenu');
@@ -19,5 +21,38 @@ export class HeaderComponent {
       });
     }
   }
+
+    goToServices() {
+    this.router.navigate(['']).then(() => {
+      const el = document.getElementById('services');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+goHome() {
+  if (this.router.url === '/') {
+    const el = document.getElementById('top');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    this.router.navigate(['/']).then(() => {
+      const el = document.getElementById('top');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+}
+
+goToAbout() {
+  if (this.router.url === '/') {
+    const el = document.getElementById('about');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    this.router.navigate(['/']).then(() => {
+      const el = document.getElementById('about');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+}
 
 }
