@@ -10,6 +10,18 @@ main {
   position: relative;*/
 }
 
+app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.content {
+  padding-top: 80px; 
+}
+
 .subjects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive */
