@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,16 +9,32 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private eRef: ElementRef) {}
 
   ngAfterViewInit(): void {
     const burger = document.getElementById('burgerMenu');
     const navMenu = document.getElementById('navMenu');
 
     if (burger && navMenu) {
-      burger.addEventListener('click', () => {
+      burger.addEventListener('click', (event) => {
+        event.stopPropagation(); 
         navMenu.classList.toggle('active');
       });
+    }
+  }
+
+   @HostListener('document:click', ['$event'])
+  handleClickOutside(event: Event) {
+    const navMenu = document.getElementById('navMenu');
+    const burger = document.getElementById('burgerMenu');
+
+    if (
+      navMenu &&
+      burger &&
+      navMenu.classList.contains('active') &&
+      !this.eRef.nativeElement.contains(event.target)
+    ) {
+      navMenu.classList.remove('active');
     }
   }
 
