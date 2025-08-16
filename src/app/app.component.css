@@ -90,6 +90,10 @@ footer {
   text-align: center;
 }
 
+.get-in-touch p {
+  font-size: 2rem;
+}
+
 .social-links {
   display: flex;
   justify-content: center;
