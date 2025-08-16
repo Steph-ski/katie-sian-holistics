@@ -55,4 +55,16 @@ goToAbout() {
   }
 }
 
+goToContact() {
+  if (this.router.url === '/') {
+    const el = document.getElementById('contact');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    this.router.navigate(['/']).then(() => {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+}
+
 }
