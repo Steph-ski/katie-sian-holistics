@@ -83,4 +83,8 @@ goToContact() {
   }
 }
 
+openDigitalProducts() {
+ window.open('https://gumroad.com/about', '_blank');
+}
+
 }
