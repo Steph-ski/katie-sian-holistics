@@ -5,8 +5,14 @@
     <h4>{{ subject.title }}</h4>
     <p>{{ subject.description }}</p>   
     <img [src]="subject.image" alt="{{ subject.title }}" class="subject-image" />
-     <a href="{{subject.tidyCallLink}}" target="_blank" class="booking-button">
+
+    <ng-container *ngIf="subject.tidyCallLink; else comingSoon">
+      <a [href]="subject.tidyCallLink" target="_blank" class="booking-button">
         Book an Appointment
-        </a>
-  </div>
+      </a>
+    </ng-container>
+
+    <ng-template #comingSoon>
+      <button class="booking-button" disabled>Coming Soon</button>
+    </ng-template>
 </div>
