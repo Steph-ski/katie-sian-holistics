@@ -25,7 +25,9 @@
     display: flex;
     justify-content: space-around;
     padding-right: 20px;
-    z-index: 999;
+   /* z-index: 999;*/
+   z-index: 100;
+    position: relative;
   }
   
   .header-button {
@@ -56,6 +58,51 @@
   font-size: 2.5rem;
   padding-right: 20px;
   cursor: pointer;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+   z-index: 1000; 
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+  display: none; /* hidden initially */
+  position: absolute;
+  top: 100%; /* directly below button */
+  left: 0;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  flex-direction: column; /* stack items vertically */
+  padding: 0;
+  margin: 0;
+
+     z-index: 200;      /* higher than page content */
+  width: max-content;
+}
+
+/* Show dropdown only when open */
+.dropdown.open .dropdown-menu {
+  display: flex; /* vertical stack */
+  flex-direction: column;
+}
+
+/* Links inside dropdown */
+.dropdown-menu a {
+  display: block; /* stack vertically */
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Hover effect */
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
 }
 
 @media (max-width: 768px) {
@@ -95,4 +142,5 @@
     display: block;
     margin-right: 70px;
   }
+
 }

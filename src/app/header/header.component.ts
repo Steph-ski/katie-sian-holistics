@@ -6,10 +6,12 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
   constructor(private router: Router, private eRef: ElementRef) {}
+
+  isDropdownOpen = false;
 
   ngAfterViewInit(): void {
     const burger = document.getElementById('burgerMenu');
@@ -83,8 +85,7 @@ goToContact() {
   }
 }
 
-openDigitalProducts() {
- window.open('https://gumroad.com/about', '_blank');
+toggleDropdown() {
+  this.isDropdownOpen = !this.isDropdownOpen;
 }
-
 }
