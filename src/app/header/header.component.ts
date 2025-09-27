@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,92 +8,95 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
+  isDropdownOpen = false;
+  isMenuOpen = false;
+
   constructor(private router: Router, private eRef: ElementRef) {}
 
-  isDropdownOpen = false;
-
   ngAfterViewInit(): void {
-    const burger = document.getElementById('burgerMenu');
-    const navMenu = document.getElementById('navMenu');
-
-    if (burger && navMenu) {
-      burger.addEventListener('click', (event) => {
-        event.stopPropagation(); 
-        navMenu.classList.toggle('active');
-      });
-    }
+    // Nothing needed here for burger menu — handled via Angular bindings
   }
 
-   @HostListener('document:click', ['$event'])
+  // Toggle burger menu open/close
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  // Toggle dropdown open/close
+  toggleDropdown(event: Event) {
+    event.stopPropagation(); // prevent document click from closing immediately
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  // Close both dropdown and burger menu
+  closeMenu() {
+    this.isMenuOpen = false;
+    this.isDropdownOpen = false;
+  }
+
+  // Close dropdown when clicking outside
+  @HostListener('document:click', ['$event'])
   handleClickOutside(event: Event) {
-    const navMenu = document.getElementById('navMenu');
-    const burger = document.getElementById('burgerMenu');
+    if (this.isDropdownOpen && !this.eRef.nativeElement.contains(event.target)) {
+      this.isDropdownOpen = false;
+    }
 
-    if (
-      navMenu &&
-      burger &&
-      navMenu.classList.contains('active') &&
-      !this.eRef.nativeElement.contains(event.target)
-    ) {
-      navMenu.classList.remove('active');
+    if (this.isMenuOpen && !this.eRef.nativeElement.contains(event.target)) {
+      this.isMenuOpen = false;
     }
   }
 
-    goToServices() {
-    this.router.navigate(['']).then(() => {
-      const el = document.getElementById('services');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  }
-
-goHome() {
-  if (this.router.url === '/') {
-    const el = document.getElementById('top');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    this.router.navigate(['/']).then(() => {
+  // Navigation methods with smooth scroll
+  goHome() {
+    if (this.router.url === '/') {
       const el = document.getElementById('top');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
-    });
+    } else {
+      this.router.navigate(['/']).then(() => {
+        const el = document.getElementById('top');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    this.closeMenu();
   }
-}
 
-goToAbout() {
-  if (this.router.url === '/') {
-    const el = document.getElementById('about');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    this.router.navigate(['/']).then(() => {
+  goToAbout() {
+    if (this.router.url === '/') {
       const el = document.getElementById('about');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
-    });
+    } else {
+      this.router.navigate(['/']).then(() => {
+        const el = document.getElementById('about');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    this.closeMenu();
   }
-}
 
-goToContact() {
-  if (this.router.url === '/') {
-    const el = document.getElementById('contact');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    this.router.navigate(['/']).then(() => {
+  goToServices() {
+    if (this.router.url === '/') {
+      const el = document.getElementById('services');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/']).then(() => {
+        const el = document.getElementById('services');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    this.closeMenu();
+  }
+
+  goToContact() {
+    if (this.router.url === '/') {
       const el = document.getElementById('contact');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
-    });
+    } else {
+      this.router.navigate(['/']).then(() => {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    this.closeMenu();
   }
-}
-
-toggleDropdown() {
-  this.isDropdownOpen = !this.isDropdownOpen;
-}
-
-closeMenu() {
-  const navMenu = document.getElementById('navMenu');
-  if (navMenu && navMenu.classList.contains('active')) {
-    navMenu.classList.remove('active');
-  }
-}
-
 }

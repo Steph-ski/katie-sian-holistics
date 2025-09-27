@@ -1,22 +1,23 @@
 <div class="header">
     <img class="katie_sian_logo" src="assets/logo.png" alt="Katie Sian Holistics logo">
 
-    <div class="burger-menu" id="burgerMenu">☰</div>
+    <div class="burger-menu" (click)="toggleMenu()">☰</div>
 
-    <div class="header-buttons" id="navMenu">
-      <button class="header-button" type="button" (click)="goHome(); closeMenu()">Home</button>
-      <button class="header-button" type="button" (click)="goToAbout(); closeMenu()">About</button>
-      <button class="header-button" type="button" (click)="goToServices(); closeMenu()">Services</button>
-      <button class="header-button" type="button" (click)="goToContact(); closeMenu()">Contact</button>
+    <div class="header-buttons" [class.active]="isMenuOpen" id="navMenu">
+      <button class="header-button" type="button" (click)="goHome()">Home</button>
+      <button class="header-button" type="button" (click)="goToAbout()">About</button>
+      <button class="header-button" type="button" (click)="goToServices()">Services</button>
+      <button class="header-button" type="button" (click)="goToContact()">Contact</button>
 
-  <div class="dropdown" [class.open]="isDropdownOpen">
-    <button class="header-button dropdown-toggle" type="button" (click)="toggleDropdown()">
-      Digital Products
-    </button>
-    <div class="dropdown-menu">
-      <a href="https://gumroad.com/product1" target="_blank">Product 1</a>
-      <a href="https://gumroad.com/product2" target="_blank">Product 2</a>
-      <a href="https://gumroad.com/product3" target="_blank">Product 3</a>
+      <div class="dropdown" [class.open]="isDropdownOpen">
+        <button class="header-button dropdown-toggle" type="button" (click)="toggleDropdown($event)">
+          Digital Products
+        </button>
+        <div class="dropdown-menu">
+          <a href="https://gumroad.com/product1" target="_blank" (click)="closeMenu()">Product 1</a>
+          <a href="https://gumroad.com/product2" target="_blank" (click)="closeMenu()">Product 2</a>
+          <a href="https://gumroad.com/product3" target="_blank" (click)="closeMenu()">Product 3</a>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
+</div>
