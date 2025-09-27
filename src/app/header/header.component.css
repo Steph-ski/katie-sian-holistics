@@ -106,7 +106,7 @@
   background-color: #f1f1f1;
 }
 
-@media (max-width: 1125px) {
+@media (max-width: 1242px) {
   .header-buttons {
     display: none;
     flex-direction: column;
