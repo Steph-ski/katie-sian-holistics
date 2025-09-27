@@ -114,6 +114,7 @@ footer {
   max-height: 50px; 
   max-width: 100%; 
   margin-top: 10px;
+  padding-right: 10px;
 }
 
 /* For small screen sizes */
