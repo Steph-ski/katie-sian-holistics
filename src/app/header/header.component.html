@@ -4,10 +4,10 @@
     <div class="burger-menu" id="burgerMenu">☰</div>
 
     <div class="header-buttons" id="navMenu">
-      <button class="header-button" type="button" (click)="goHome()">Home</button>
-      <button class="header-button" type="button" (click)="goToAbout()">About</button>
-      <button class="header-button" type="button" (click)="goToServices()">Services</button>
-      <button class="header-button" type="button" (click)="goToContact()">Contact</button>
+      <button class="header-button" type="button" (click)="goHome(); closeMenu()">Home</button>
+      <button class="header-button" type="button" (click)="goToAbout(); closeMenu()">About</button>
+      <button class="header-button" type="button" (click)="goToServices(); closeMenu()">Services</button>
+      <button class="header-button" type="button" (click)="goToContact(); closeMenu()">Contact</button>
 
   <div class="dropdown" [class.open]="isDropdownOpen">
     <button class="header-button dropdown-toggle" type="button" (click)="toggleDropdown()">

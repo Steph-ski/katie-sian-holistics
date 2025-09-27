@@ -88,4 +88,12 @@ goToContact() {
 toggleDropdown() {
   this.isDropdownOpen = !this.isDropdownOpen;
 }
+
+closeMenu() {
+  const navMenu = document.getElementById('navMenu');
+  if (navMenu && navMenu.classList.contains('active')) {
+    navMenu.classList.remove('active');
+  }
+}
+
 }
