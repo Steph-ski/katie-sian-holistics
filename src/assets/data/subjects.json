@@ -1,27 +1,30 @@
 [
-{
-    "id":"1",
-    "title":"Neuro Ninjas with Katie - a programme of 6 sessions tailored for primary aged children",
-    "subHeading":"Neuro Ninjas with Katie – Helping Young Minds Thrive (ages 8 – 11)",
+  {
+    "id": "1",
+    "title": "Neuro Ninjas with Katie - a programme of 6 sessions tailored for primary aged children",
+    "subHeading": "Neuro Ninjas with Katie – Helping Young Minds Thrive (ages 8 – 11)",
     "description": "I love working with children, helping them understand how their brains work and equipping them with strategies to navigate life's ups and downs. I truly believe that all young people would benefit from this knowledge, and my dream is to bring my programme into local schools so that every child has access to these essential life skills.\n\nI work 1:1 with primary aged children, tailoring each session to their interests and needs. Sessions are structured, practical and fun, designed to help children build confidence, resilience and a deeper understanding of themselves. These skills support them not just now, but for the rest of their lives.\n\nI offer an initial block of six sessions, with the option to extend if needed. To start, I provide a free phone consultation for parents to discuss how I can support your child. This is followed by a free face to face consultation with you and your child.",
     "tidyCallLink": "https://tidycal.com/katiesian/neuro-ninjas-with-katie",
-    "image": "assets/kids.jpeg"
-},
-{
-    "id":"2",
-    "title":"Mind Matters with Katie – a programme of 6 session tailored for secondary aged children",
-    "subHeading":"Mind Matters with Katie – supporting teens through life’s challenges",
+    "image": "assets/neuro_ninjas.png",
+    "logo": "assets/neuro_ninjas.png"
+  },
+  {
+    "id": "2",
+    "title": "Mind Matters with Katie – a programme of 6 session tailored for secondary aged children",
+    "subHeading": "Mind Matters with Katie – supporting teens through life’s challenges",
     "description": "The teenage years can be tough to navigate, with academic pressure, social challenges and rising anxiety levels in our young people. Mind Matters with Katie is designed to provide secondary-aged students with the tools they need to manage stress, lift their mood and build confidence in themselves. Sessions are relaxed, safe and positive, creating a space where teens can explore strategies to reduce anxiety, improve resilience and feel more in control of their thoughts and emotions. My approach is practical, and solution focused, helping young people develop life skills that will support them now and into adulthood. I offer an initial block of six sessions, with the option to extend if needed. To start, I provide a free phone consultation for parents to discuss how I can support your child.This is followed by a free face to face consultation with you and your child.",
     "tidyCallLink": "https://tidycal.com/katiesian/mind-matters-with-katie",
-    "image": "assets/teen.jpg"
-},
+    "image": "assets/mind_ matters.png",
+    "logo": "assets/mind_ matters.png"
+  },
 {
     "id":"3",
     "title":"Solution Focused Hypnotherapy with Katie",
     "subHeading":"Supporting Adults",
     "description": "Life can feel overwhelming at times, with the pressures of work, relationships, and everyday responsibilities taking their toll. Therapy with Katie is here to help you regain balance, build resilience, and feel more in control of your thoughts and emotions. I offer support with: Anxiety &amp; stress management, Low mood &amp; motivation, Confidence &amp; self-belief, Anger management, Overwhelm &amp; burnout, Phobias &amp; fears, Breaking unhelpful habits. Sessions are calm, supportive, and solution-focused, giving you the space to explore practical strategies that help you move forward. My approach is grounded in neuroscience and tailored to your needs, helping you develop tools that support your well-being both now and in the future. Most adults find they make good progress within 6–8 sessions, but you have the flexibility to book a block or pay as you go. To begin, I provide a free phone consultation where we can discuss how I can support you.",
     "tidyCallLink": "https://tidycal.com/katiesian/solution-focused-hypnotherapy-with-katie",
-    "image": "assets/adult.jpeg"
+    "image": "assets/adult.jpeg",
+    "logo":  ""
 }, 
 {
     "id":"4",
@@ -29,7 +32,8 @@
     "subHeading":"Walking Therapy",
     "description": "Walking therapy is a gentle, effective way to combine the benefits of talking therapy with the healing power of movement and nature. Instead of sitting indoors, we take our sessions outside, walking side by side at a pace that feels comfortable.  For many people, walking makes it easier to talk openly. The natural rhythm of movement can help reduce anxiety, clear the mind, and bring a fresh perspective. Being outdoors also lessens the intensity of eye contact, which some find helps them feel more at ease. Spending time by the sea, in the woods, or in wide open spaces naturally boosts mood, lowers stress, and increases feelings of calm and wellbeing. Living in Clevedon gives us wonderful opportunities to enjoy these landscapes during therapy.  We’ll start with an initial consultation in the studio. After that, you’ll be able to choose from one of several pre-planned local routes, tailored to your fitness levels and preferences—whether that’s a peaceful woodland walk, fresh sea air, or the openness of green spaces. Each step we take becomes part of the therapeutic process, helping you to feel grounded, supported, and more connected with yourself. ",
     "tidyCallLink": "",
-    "image": "assets/group.jpeg"
+    "image": "assets/group.jpeg",
+    "logo": ""
 },
 {
     "id":"5",
@@ -37,7 +41,8 @@
     "subHeading":"Holistic Massage",
     "description": "Holistic massage is more than easing muscle aches. It’s a nurturing, intuitive approach that considers your whole wellbeing — physical, emotional, and mental. So often, our bodies hold the weight of our emotions — stress, worry, and even joy all leave their imprint. Holistic massage creates the space for you to release that weight, reconnect with yourself, and invite balance back into both body and mind. Using a blend of techniques, each session is shaped around what you need in the moment. No routines, no standard sequences — just a treatment as unique as you are. Holistic massage can support you with muscle tension, stress, fatigue, emotional strain, or simply the need to pause and nurture yourself. Clients often leave feeling lighter, calmer, and more centred — carrying that sense of balance into daily life. I witness the power of holistic massage every day: the moment muscles soften, the breath steadies, and the mind begins to let go. It’s not just about relaxation (though that’s wonderful too); it’s about creating harmony between body and mind, a space where healing and renewal can naturally unfold. You may choose holistic massage as a standalone treatment, allowing your body to deeply rest and recharge. Or, for a truly integrative experience, you can combine massage with solution focused hypnotherapy. Together, they work in harmony: hypnotherapy calms the mind and builds clarity while massage releases stored physical tension. The result is a deeper sense of wellbeing, supporting both relaxation and positive change. ",
     "tidyCallLink": "",
-    "image": "assets/group.jpeg"
+    "image": "assets/group.jpeg",
+    "logo":  ""
 }
 
 ]

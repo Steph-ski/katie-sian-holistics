@@ -7,7 +7,12 @@
   >
     <div class="subject">
       <h3>{{ subject.subHeading }}</h3>
-      <p>{{ subject.title }}</p> 
+            <ng-container *ngIf="subject.logo; else showTitle">
+        <img [src]="subject.logo" [alt]="subject.title" class="subject-image" />
+      </ng-container>
+      <ng-template #showTitle>
+        <p>{{ subject.title }}</p>
+      </ng-template>
     </div>
   </a>
 </div>
