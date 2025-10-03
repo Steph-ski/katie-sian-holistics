@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
 import { RouterModule } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({  
   selector: 'app-subject-detail',
@@ -13,6 +14,10 @@ import { RouterModule } from '@angular/router';
 export class SubjectDetailComponent implements OnInit {
 
   subject: any;
+  private sub!: Subscription;
+
+   constructor(private route: ActivatedRoute) {}
+  
 
   ngOnInit() {
     this.subject = history.state.subject;
@@ -20,7 +25,25 @@ export class SubjectDetailComponent implements OnInit {
     if (!this.subject) {
       console.error('Subject not found!');
     }
-    console.log('Loaded subject:', this.subject);
+
+        this.sub = this.route.paramMap.subscribe(() => {
+      setTimeout(() => {
+        const nav = document.querySelector('.header') as HTMLElement | null; 
+        const navHeight = nav ? nav.offsetHeight : 80; 
+        const topEl = document.getElementById('top');
+
+        if (topEl) {
+          topEl.style.scrollMarginTop = `${navHeight}px`;
+          topEl.scrollIntoView({ behavior: 'auto', block: 'start' });
+        } else {
+          window.scrollTo({ top: navHeight, behavior: 'auto' });
+        }
+      }, 0);
+    });    
+  }
+
+    ngOnDestroy(): void {
+    this.sub?.unsubscribe();
   }
 
 
