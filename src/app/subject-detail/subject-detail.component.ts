@@ -16,8 +16,7 @@ export class SubjectDetailComponent implements OnInit {
   subject: any;
   private sub!: Subscription;
 
-   constructor(private route: ActivatedRoute) {}
-  
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.subject = history.state.subject;
