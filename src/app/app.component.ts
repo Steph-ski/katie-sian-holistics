@@ -14,7 +14,6 @@ import { HeaderComponent } from './header/header.component';
   styleUrl: './app.component.css'
 })
 
-
 export class AppComponent implements OnInit {
   subjectData: any;
   testimonialsData: any;
@@ -24,17 +23,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.http.get('/assets/data/subjects.json').subscribe((data) => {
       this.subjectData = data;
-      console.log(this.subjectData)
     });
 
     this.http.get('/assets/data/testimonials.json').subscribe((data) => {
       this.testimonialsData = data;
-      console.log(this.testimonialsData)
     });
-
-    
   }
-
- 
-
 }
