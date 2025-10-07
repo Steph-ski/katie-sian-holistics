@@ -1,7 +1,9 @@
 
  <div id="top"></div>
  <div class="subject-detail-container">
+      <button class="back-button" routerLink="/">← Back to Home</button>
   <div class="subject-detail-content" *ngIf="subject">
+
     <h2>{{ subject.subHeading }}</h2>
     <h4>{{ subject.title }}</h4>
     <p>{{ subject.description }}</p>   
