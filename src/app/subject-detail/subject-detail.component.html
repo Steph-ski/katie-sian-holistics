@@ -1,21 +1,21 @@
+<div class="subject-detail-container">
+  <button class="back-button" routerLink="/">← Back to Home</button> 
+  <div class="subject-detail-content-wrapper">
+    <div class="subject-detail-content" *ngIf="subject">
+      <h2>{{ subject.subHeading }}</h2>
+      <h4>{{ subject.title }}</h4>
+      <p>{{ subject.description }}</p>
+      <img [src]="subject.image" alt="{{ subject.title }}" class="subject-image" />
 
- <div id="top"></div>
- <div class="subject-detail-container">
-      <button class="back-button" routerLink="/">← Back to Home</button>
-  <div class="subject-detail-content" *ngIf="subject">
+      <ng-container *ngIf="subject.tidyCallLink; else comingSoon">
+        <a [href]="subject.tidyCallLink" target="_blank" class="booking-button">
+          Book an Appointment
+        </a>
+      </ng-container>
 
-    <h2>{{ subject.subHeading }}</h2>
-    <h4>{{ subject.title }}</h4>
-    <p>{{ subject.description }}</p>   
-    <img [src]="subject.image" alt="{{ subject.title }}" class="subject-image" />
-
-    <ng-container *ngIf="subject.tidyCallLink; else comingSoon">
-      <a [href]="subject.tidyCallLink" target="_blank" class="booking-button">
-        Book an Appointment
-      </a>
-    </ng-container>
-
-    <ng-template #comingSoon>
-      <button class="booking-button" disabled>Coming Soon</button>
-    </ng-template>
+      <ng-template #comingSoon>
+        <button class="booking-button" disabled>Coming Soon</button>
+      </ng-template>
+    </div>
+  </div>
 </div>
