@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<Review[]>('/assets/data/testimonials.json').subscribe((data) => {
       this.reviews = data;
-      console.log(data)
 
       data.forEach(review => {
         if (review.name == "") {
