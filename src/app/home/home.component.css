@@ -26,7 +26,7 @@
    }
    
    .hero-image-container {
-     height: 300px;
+
      width: 300px;
      background-color: #EDF6F9;
      border-radius: 50%;
@@ -46,19 +46,25 @@
    }
       
    .title {
-     font-size: 3.5rem;
-     font-weight: bold;
+    font-size: 4rem;
+    font-family: 'Licorice', cursive;
+    font-weight: 500;
+    font-style: normal; 
    }
    
    .slogan {
-   font-size: 3rem;
-   padding-bottom: 30px;
+   font-size: 2.5rem;
    }
    
    .tag-line {
-   font-size: 2.5rem;
+   font-size: 3rem;
    max-width: 700px;
    width: 100%;
+   font-weight: bold;
+   }
+
+   .details {
+    font-size: 1.8rem;
    }
    
    .intro {
@@ -136,25 +142,33 @@
   @media (max-width: 1398px) {
       .opening-text {
     text-align: center;
+    background-color: #ffffffb3;
+    border-radius: 8px;
   }
   }
 
    @media (max-width: 768px) {
   .tag-line {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
      text-align: center;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 3rem;
      text-align: center;
   }
   .slogan {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     text-align: center;
   }
+.details {
+  font-size: 1.2rem;
+}
   .intro-text {
     font-size: 1.25rem;
+  }
+  .hero-image-container {
+    width: 200px;
   }
 }
    
