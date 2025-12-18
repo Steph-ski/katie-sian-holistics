@@ -82,6 +82,10 @@
   max-width: 250px;
   word-wrap: break-word;
   white-space: normal;
+
+  max-height: calc(100vh - 180px); 
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .dropdown.open .dropdown-menu {
@@ -91,7 +95,7 @@
 
 .dropdown-menu a {
   display: block; 
-  padding: 10px 15px;
+  padding: 10px 0px;
   text-decoration: none;
   color: black;
   text-align: center;
@@ -115,6 +119,10 @@
     padding: 10px 20px;
      z-index: 1100;
      margin-right: 55px;
+
+    max-height: calc(100vh - 180px); 
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .header {
@@ -141,7 +149,6 @@
 
    .dropdown.open {
     padding: 10px 20px;
-    
     text-align: center;
   }
 

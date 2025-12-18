@@ -5,13 +5,20 @@
     <div class="subject-detail-content" *ngIf="subject">
       <h2>{{ subject.subHeading }}</h2>
       <h4>{{ subject.title }}</h4>
-      <p>{{ subject.description }}</p>
+      <div class="subject-description" [innerHTML]="subject.description"></div>
       <img [src]="subject.image" alt="{{ subject.title }}" class="subject-image" />
 
-      <ng-container *ngIf="subject.tidyCallLink; else comingSoon">
-        <a [href]="subject.tidyCallLink" target="_blank" class="booking-button">
-          Book an Appointment
+      <ng-container *ngIf="subject.tidyCallLinks?.length; else comingSoon">
+      <div class="booking-buttons">
+        <a 
+          *ngFor="let link of subject.tidyCallLinks" 
+          [href]="link.url" 
+          target="_blank" 
+          class="booking-button"
+        >
+          Book {{ link.label }}
         </a>
+      </div>
       </ng-container>
 
       <ng-template #comingSoon>
