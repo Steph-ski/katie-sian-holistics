@@ -4,12 +4,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-@Component({  
-  selector: 'app-subject-detail',
-  standalone: true,
-  imports: [RouterModule, CommonModule],
-  templateUrl: './subject-detail.component.html',
-  styleUrl: './subject-detail.component.css'
+@Component({
+    selector: 'app-subject-detail',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './subject-detail.component.html',
+    styleUrl: './subject-detail.component.css'
 })
 export class SubjectDetailComponent implements OnInit {
 

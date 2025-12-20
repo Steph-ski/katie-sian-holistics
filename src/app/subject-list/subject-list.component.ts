@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-subject-list',
-  standalone: true,
-  templateUrl: './subject-list.component.html',
-  styleUrls: ['./subject-list.component.css'],
-  imports: [CommonModule, RouterModule, HttpClientModule]
+    selector: 'app-subject-list',
+    templateUrl: './subject-list.component.html',
+    styleUrls: ['./subject-list.component.css'],
+    imports: [CommonModule, RouterModule]
 })
 export class SubjectListComponent implements OnInit {
  subjects: any[] = [];

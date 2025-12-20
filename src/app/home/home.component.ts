@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SubjectListComponent } from '../subject-list/subject-list.component'; 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 interface Review {
@@ -10,11 +10,10 @@ interface Review {
 }
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [SubjectListComponent,  HttpClientModule, CommonModule],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+    selector: 'app-home',
+    imports: [SubjectListComponent,CommonModule],
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   reviews: Review[] = [];

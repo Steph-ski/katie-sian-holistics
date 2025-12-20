@@ -2,11 +2,10 @@ import { Component, ElementRef, HostListener, AfterViewInit } from '@angular/cor
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+    selector: 'app-header',
+    imports: [],
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements AfterViewInit {
   isDropdownOpen = false;

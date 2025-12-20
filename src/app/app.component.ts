@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router'; 
 import { HeaderComponent } from './header/header.component'; 
 
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HttpClientModule, CommonModule, RouterLink, HeaderComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [RouterOutlet, CommonModule, HeaderComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 
 export class AppComponent implements OnInit {
