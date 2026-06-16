@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .header {
     width: 100%;
     height: auto; 
@@ -10,7 +14,7 @@
     top: 0;
     overflow: visible; 
     z-index: 1000; 
-    padding: 10px 20px; 
+    padding: 10px 30px 10px 12px;
   }
   
   .katie_sian_logo {
@@ -19,15 +23,17 @@
    padding-left: 10px;
    border-radius: 50%;
   }
-  
+
   .header-buttons {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    padding-right: 20px;
-    z-index: 100;
-    position: relative;
-  }
+  display: flex;
+  justify-content: flex-start;   
+  gap: 50px;                     
+  width: auto;                   
+  margin-left: auto;            
+  padding-right: 60px;          
+  z-index: 100;
+  position: relative;
+}
   
   .header-button {
     all: unset;
@@ -36,14 +42,18 @@
     position: relative;
     transition: color 0.3s ease;
   }
-  
+
+.header-button {
+  position: relative;
+}
+
 .header-button::after {
   content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
-  width: 0;
   height: 2px;
+  width: 0;
   background-color: currentColor;
   transition: width 0.3s ease;
 }
@@ -62,28 +72,27 @@
 .dropdown {
   position: relative;
   display: inline-block;
-   z-index: 1000; 
+  z-index: 1000;
 }
 
 .dropdown-menu {
-  display: none; 
+  display: none;
   position: absolute;
-  top: 100%; 
-  left: 0;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: white;
-  min-width: 180px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  min-width: 260px;
+  max-width: 320px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  z-index: 1000;
-  flex-direction: column; 
+  z-index: 9999;
+  flex-direction: column;
   padding: 0;
   margin: 0;
-  z-index: 200;    
-  max-width: 250px;
   word-wrap: break-word;
   white-space: normal;
-
-  max-height: calc(100vh - 180px); 
+  max-height: calc(100vh - 180px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -94,11 +103,14 @@
 }
 
 .dropdown-menu a {
-  display: block; 
-  padding: 10px 0px;
+  display: block;
+  padding: 10px 16px;
   text-decoration: none;
   color: black;
-  text-align: center;
+  text-align: left;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .dropdown-menu a:hover {
@@ -106,23 +118,43 @@
 }
 
 @media (max-width: 1242px) {
-  .header-buttons {
+  .header-buttons { 
     display: none;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     background-color: #83C5BE;
     position: absolute;
     top: 100%;
-    width: 120px; 
-    right: 0;
-    text-align: right;
-    padding: 10px 20px;
-     z-index: 1100;
-     margin-right: 55px;
-
-    max-height: calc(100vh - 180px); 
+    right: 0;   
+    left: auto;
+    width: 280px;
+    padding: 10px 0;
+    margin: 0;
+    max-height: calc(100vh - 180px);
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    z-index: 1100;
+  }
+
+  .header-buttons .dropdown {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+  .header-buttons .dropdown-menu {
+    position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+
+    min-width: 0;
+  max-width: 100%;
+  width: 100%;
+
+  box-shadow: none;
+
   }
 
   .header {
@@ -134,22 +166,23 @@
   }
 
    .header-button {
-    all: unset; 
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: black; 
-    text-align: center;
-    cursor: pointer;
+  all: unset;
+
+  position: relative;      
+  display: block;          
+  transition: color 0.3s ease;
+
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: black;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
   }
 
   .burger-menu {
     display: block;
-    margin-right: 70px;
-  }
-
-   .dropdown.open {
-    padding: 10px 20px;
-    text-align: center;
+    margin-right: 50px;
   }
 
 }
