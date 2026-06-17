@@ -8,37 +8,41 @@ import { Router } from '@angular/router';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements AfterViewInit {
-  isDropdownOpen = false;
   isMenuOpen = false;
 
-  constructor(private router: Router, private eRef: ElementRef) {}
+  // NEW: track each dropdown separately
+  openDropdown: string | null = null;
 
-  ngAfterViewInit(): void {
-  }
+  constructor(
+    private router: Router,
+    private eRef: ElementRef
+  ) {}
+
+  ngAfterViewInit(): void {}
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  toggleDropdown(event: Event) {
-    event.stopPropagation(); 
-    this.isDropdownOpen = !this.isDropdownOpen;
+  toggleDropdown(event: Event, dropdownName: string) {
+    event.stopPropagation();
+    this.openDropdown =
+      this.openDropdown === dropdownName ? null : dropdownName;
   }
 
   closeMenu() {
     this.isMenuOpen = false;
-    this.isDropdownOpen = false;
+    this.openDropdown = null;
   }
-
 
   @HostListener('document:click', ['$event'])
   handleClickOutside(event: Event) {
-    if (this.isDropdownOpen && !this.eRef.nativeElement.contains(event.target)) {
-      this.isDropdownOpen = false;
-    }
-
-    if (this.isMenuOpen && !this.eRef.nativeElement.contains(event.target)) {
+    if (
+      (this.isMenuOpen || this.openDropdown) &&
+      !this.eRef.nativeElement.contains(event.target)
+    ) {
       this.isMenuOpen = false;
+      this.openDropdown = null;
     }
   }
 
