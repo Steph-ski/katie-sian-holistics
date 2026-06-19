@@ -1,50 +1,48 @@
 <div class="header">
-    <img class="katie_sian_logo" src="assets/logo.png" alt="Katie Sian Holistics logo">
+  <img class="katie_sian_logo" src="assets/logo.png" alt="Katie Sian Holistics logo">
 
-    <div class="burger-menu" (click)="toggleMenu()">☰</div>
+  <div class="burger-menu" (click)="toggleMenu()">☰</div>
 
-    <div class="header-buttons" [class.active]="isMenuOpen" id="navMenu">
-      <button class="header-button" type="button" (click)="goHome()">Home</button>
-      <button class="header-button" type="button" (click)="goToAbout()">About</button>
-      <button class="header-button" type="button" (click)="goToServices()">Services</button>
-      <button class="header-button" type="button" (click)="goToContact()">Contact</button>
+  <div class="header-buttons" [class.active]="isMenuOpen" id="navMenu">
+    <button class="header-button" type="button" (click)="goHome()">Home</button>
+    <button class="header-button" type="button" (click)="goToAbout()">About</button>
+    <button class="header-button" type="button" (click)="goToServices()">Services</button>
+    <button class="header-button" type="button" (click)="goToContact()">Contact</button>
 
-      <div class="dropdown" [class.open]="openDropdown === 'digital'">
-        <button class="header-button dropdown-toggle"
-          type="button"
-          (click)="toggleDropdown($event, 'digital')">
-          Digital Products
-        </button>
-        <div class="dropdown-menu">
-          <a href="https://katiesian.gumroad.com/l/secondaryschooltransitionpack" target="_blank" (click)="closeMenu()">Secondary School Transition Pack</a>
-        </div>
+    <div class="dropdown" [class.open]="openDropdown === 'digital'">
+      <button class="header-button dropdown-toggle" type="button" (click)="toggleDropdown($event, 'digital')">
+        Digital Products
+      </button>
+      <div class="dropdown-menu">
+        <a href="https://katiesian.gumroad.com/l/secondaryschooltransitionpack" target="_blank"
+          (click)="closeMenu()">Secondary School Transition Pack</a>
       </div>
-     
-<div class="dropdown" [class.open]="openDropdown === 'policies'">
-  <button class="header-button dropdown-toggle"
-          type="button"
-          (click)="toggleDropdown($event, 'policies')">
-    Policies
-  </button>
-
-  <div class="dropdown-menu">
-    <a href="/assets/policies/privacy_notice_and_data_protection_policy.pdf" target="_blank" (click)="closeMenu()">
-      Privacy Notice and Data Protection Policy
-    </a>
-
-    <a href="/assets/policies/personal_data_rights_request_and_privacy_concern_form.pdf" target="_blank" (click)="closeMenu()">
-      Personal Data Rights Request and Privacy Policy
-    </a>
-
-    <a href="/assets/policies/complaints_procedure.pdf" target="_blank" (click)="closeMenu()">
-      Complaints Procedure
-    </a>
-
-    <a href="/assets/policies/katie_sian_therapies _safeguarding_policy.pdf" target="_blank" (click)="closeMenu()">
-      Safeguarding Policy
-    </a>
-  </div>
-</div>
-
     </div>
+
+    <div class="dropdown" [class.open]="openDropdown === 'policies'">
+      <button class="header-button dropdown-toggle" type="button" (click)="toggleDropdown($event, 'policies')">
+        Policies
+      </button>
+
+      <div class="dropdown-menu">
+        <a href="/assets/policies/privacy_notice_and_data_protection_policy.pdf" target="_blank" (click)="closeMenu()">
+          Privacy Notice and Data Protection Policy
+        </a>
+
+        <a href="/assets/policies/personal_data_rights_request_and_privacy_concern_form.pdf" target="_blank"
+          (click)="closeMenu()">
+          Personal Data Rights Request and Privacy Policy
+        </a>
+
+        <a href="/assets/policies/complaints_procedure.pdf" target="_blank" (click)="closeMenu()">
+          Complaints Procedure
+        </a>
+
+        <a href="/assets/policies/katie_sian_therapies _safeguarding_policy.pdf" target="_blank" (click)="closeMenu()">
+          Safeguarding Policy
+        </a>
+      </div>
+    </div>
+
+  </div>
 </div>

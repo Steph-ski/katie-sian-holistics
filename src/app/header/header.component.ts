@@ -2,10 +2,10 @@ import { Component, ElementRef, HostListener, AfterViewInit } from '@angular/cor
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-header',
-    imports: [],
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.css']
+  selector: 'app-header',
+  imports: [],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements AfterViewInit {
   isMenuOpen = false;
@@ -16,9 +16,9 @@ export class HeaderComponent implements AfterViewInit {
   constructor(
     private router: Router,
     private eRef: ElementRef
-  ) {}
+  ) { }
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void { }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
