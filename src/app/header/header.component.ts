@@ -24,8 +24,7 @@ export class HeaderComponent implements AfterViewInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  toggleDropdown(event: Event, dropdownName: string) {
-    event.stopPropagation();
+  toggleDropdown(dropdownName: string) {
     this.openDropdown =
       this.openDropdown === dropdownName ? null : dropdownName;
   }

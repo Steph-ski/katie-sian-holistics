@@ -10,7 +10,7 @@
     <button class="header-button" type="button" (click)="goToContact()">Contact</button>
 
     <div class="dropdown" [class.open]="openDropdown === 'digital'">
-      <button class="header-button dropdown-toggle" type="button" (click)="toggleDropdown($event, 'digital')">
+      <button class="header-button dropdown-toggle" type="button" (click)="toggleDropdown('digital')">
         Digital Products
       </button>
       <div class="dropdown-menu">
@@ -20,7 +20,7 @@
     </div>
 
     <div class="dropdown" [class.open]="openDropdown === 'policies'">
-      <button class="header-button dropdown-toggle" type="button" (click)="toggleDropdown($event, 'policies')">
+      <button class="header-button dropdown-toggle" type="button" (click)="toggleDropdown('policies')">
         Policies
       </button>
 

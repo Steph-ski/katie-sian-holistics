@@ -135,6 +135,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 1100;
+    outline: 3px solid red; /* For debugging purposes */
   }
 
   .header-buttons .dropdown {
@@ -142,6 +143,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    outline: 2px solid blue; /* TEMP DEBUG */
   }
 
   .header-buttons .dropdown-menu {
@@ -164,7 +166,7 @@
     width: 100%;
 
     box-shadow: none;
-
+    outline: 2px solid green; /* TEMP DEBUG */
   }
 
   .header {
@@ -177,11 +179,9 @@
 
   .header-button {
     all: unset;
-
     position: relative;
     display: block;
     transition: color 0.3s ease;
-
     padding: 1rem;
     font-size: 1.5rem;
     color: black;
