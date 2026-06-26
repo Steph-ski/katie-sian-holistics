@@ -150,7 +150,8 @@
     padding: 10px 0;
     margin: 0;
     max-height: calc(100dvh - 180px);
-    overflow-y: auto;
+   /* overflow-y: auto;*/
+    overflow:visible;
     overflow-x: hidden;
     z-index: 1100;
     gap: 0;

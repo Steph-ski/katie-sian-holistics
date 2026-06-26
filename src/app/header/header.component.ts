@@ -45,76 +45,56 @@ export class HeaderComponent implements AfterViewInit {
     }
   }
 
-goToServices() {
-  this.closeMenu();
-
-  if (this.router.url !== '/') {
-    this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        const el = document.getElementById('services');
-        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 0);
-    });
-  } else {
-    setTimeout(() => {
-      const el = document.getElementById('services');
-      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
-  }
-}
-
-goToAbout() {
-  this.closeMenu();
-
-  if (this.router.url !== '/') {
-    this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        const el = document.getElementById('about');
-        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 0);
-    });
-  } else {
-    setTimeout(() => {
-      const el = document.getElementById('about');
-      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
-  }
-}
-
-goToContact() {
-  this.closeMenu();
-
-  if (this.router.url !== '/') {
-    this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        const el = document.getElementById('contact');
-        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 0);
-    });
-  } else {
-    setTimeout(() => {
-      const el = document.getElementById('contact');
-      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
-  }
-}
-
 goHome() {
-  this.closeMenu();
-
-  if (this.router.url !== '/') {
-    this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        const el = document.getElementById('top');
-        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 0);
-    });
-  } else {
-    setTimeout(() => {
+    if (this.router.url === '/') {
       const el = document.getElementById('top');
-      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/']).then(() => {
+        const el = document.getElementById('top');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    this.closeMenu();
   }
-}
+
+  goToAbout() {
+    if (this.router.url === '/') {
+      const el = document.getElementById('about');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/']).then(() => {
+        const el = document.getElementById('about');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    this.closeMenu();
+  }
+
+  goToServices() {
+    if (this.router.url === '/') {
+      const el = document.getElementById('services');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/']).then(() => {
+        const el = document.getElementById('services');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    this.closeMenu();
+  }
+
+  goToContact() {
+    if (this.router.url === '/') {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/']).then(() => {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    this.closeMenu();
+  }
   
 }
