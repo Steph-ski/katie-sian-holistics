@@ -45,55 +45,76 @@ export class HeaderComponent implements AfterViewInit {
     }
   }
 
-  goHome() {
-    if (this.router.url === '/') {
-      const el = document.getElementById('top');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      this.router.navigate(['/']).then(() => {
-        const el = document.getElementById('top');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-    this.closeMenu();
-  }
+goToServices() {
+  this.closeMenu();
 
-  goToAbout() {
-    if (this.router.url === '/') {
-      const el = document.getElementById('about');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      this.router.navigate(['/']).then(() => {
-        const el = document.getElementById('about');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-    this.closeMenu();
-  }
-
-  goToServices() {
-    if (this.router.url === '/') {
-      const el = document.getElementById('services');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      this.router.navigate(['/']).then(() => {
+  if (this.router.url !== '/') {
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
         const el = document.getElementById('services');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-    this.closeMenu();
+        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 0);
+    });
+  } else {
+    setTimeout(() => {
+      const el = document.getElementById('services');
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
   }
+}
 
-  goToContact() {
-    if (this.router.url === '/') {
-      const el = document.getElementById('contact');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      this.router.navigate(['/']).then(() => {
-        const el = document.getElementById('contact');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-    this.closeMenu();
+goToAbout() {
+  this.closeMenu();
+
+  if (this.router.url !== '/') {
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        const el = document.getElementById('about');
+        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 0);
+    });
+  } else {
+    setTimeout(() => {
+      const el = document.getElementById('about');
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
   }
+}
+
+goToContact() {
+  this.closeMenu();
+
+  if (this.router.url !== '/') {
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        const el = document.getElementById('contact');
+        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 0);
+    });
+  } else {
+    setTimeout(() => {
+      const el = document.getElementById('contact');
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
+  }
+}
+
+goHome() {
+  this.closeMenu();
+
+  if (this.router.url !== '/') {
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        const el = document.getElementById('top');
+        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 0);
+    });
+  } else {
+    setTimeout(() => {
+      const el = document.getElementById('top');
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
+  }
+}
+  
 }

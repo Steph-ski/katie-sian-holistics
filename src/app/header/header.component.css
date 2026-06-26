@@ -149,7 +149,7 @@
     width: 280px;
     padding: 10px 0;
     margin: 0;
-    max-height: calc(100vh - 180px);
+    max-height: calc(100dvh - 180px);
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 1100;
@@ -188,7 +188,7 @@
   }*/
 
     .header-buttons .dropdown-menu {
-    position: static;   /* KEY FIX */
+    position: static;   
     transform: none;
 
     width: 100%;
@@ -224,7 +224,7 @@
     text-align: left;
     width: 100%;
     cursor: pointer;*/
-      all: unset;
+  all: unset;
   position: relative;
   transition: color 0.3s ease;
   padding: 1rem;
